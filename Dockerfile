@@ -11,8 +11,8 @@ ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/po
 RUN unzip /tmp/pb.zip -d /pb/
 
 ADD https://downloads.rclone.org/rclone-current-linux-amd64.zip /tmp/rclone.zip
-RUN unzip /tmp/rclone.zip /tmp/rclone
-RUN cd /tmp/rclone/rclone-*-linux-amd64
+RUN unzip /tmp/rclone.zip -d /tmp
+RUN cd /tmp/rclone-*-linux-amd64
 RUN sudo cp rclone /usr/bin/
 RUN sudo chown root:root /usr/bin/rclone
 RUN sudo chmod 755 /usr/bin/rclone
