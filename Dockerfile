@@ -12,8 +12,8 @@ RUN unzip /tmp/pb.zip -d /pb/
 
 ADD https://downloads.rclone.org/rclone-current-linux-amd64.zip /tmp/rclone.zip
 RUN unzip /tmp/rclone.zip /tmp/rclone
-
-RUN sudo cp /tmp/rclone/rclone /usr/bin/
+RUN cd /tmp/rclone/rclone-*-linux-amd64
+RUN sudo cp rclone /usr/bin/
 RUN sudo chown root:root /usr/bin/rclone
 RUN sudo chmod 755 /usr/bin/rclone
 
