@@ -12,8 +12,7 @@ RUN unzip /tmp/pb.zip -d /pb/
 
 ADD https://downloads.rclone.org/rclone-current-linux-amd64.zip /tmp/rclone.zip
 RUN unzip /tmp/rclone.zip -d /tmp
-RUN cd /tmp/rclone-*-linux-amd64
-RUN cp rclone /usr/bin/
+RUN cp /tmp/rclone-*-linux-amd64/rclone /usr/bin/
 RUN chmod 755 /usr/bin/rclone
 
 EXPOSE 8080
