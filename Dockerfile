@@ -10,6 +10,14 @@ RUN apk add --no-cache \
 ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
 RUN unzip /tmp/pb.zip -d /pb/
 
+RUN curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip
+RUN unzip rclone-current-linux-amd64.zip
+RUN cd rclone-*-linux-amd64
+
+RUN sudo cp rclone /usr/bin/
+RUN sudo chown root:root /usr/bin/rclone
+RUN sudo chmod 755 /usr/bin/rclone
+
 EXPOSE 8080
 
 # start PocketBase
